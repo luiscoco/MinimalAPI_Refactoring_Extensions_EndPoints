@@ -1,6 +1,6 @@
 # How to refactor a .NET8 MinimalAPI with Extensions and EndPoints folders
 
-## 1. Create a .NET8 MinimalAPI (See Sample1-Default template code)
+## 1. Create a .NET8 MinimalAPI (See Sample1, Default Visual Studio template code)
 
 We create a new .NET8 WebAPI with Visual Studio 2022 Community Edition and **unselect the controllers option**
 
