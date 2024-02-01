@@ -18,8 +18,7 @@ We input the project name and location
 
 We select the project main features. **VERY IMPORTANT**: Do not forget to **uncheck the create controllers** option
 
-![image](https://github.com/luiscoco/MinimalAPI_Refactoring_Extensions_EndPoints/assets/32194879/88a54c4c-395c-49d2-8b7c-3408a64f46ed)
-
+![image](https://github.com/luiscoco/MinimalAPI_Refactoring_Extensions_EndPoints/assets/32194879/6061db3f-60e9-4c51-994b-2562d8d27e69)
 
 This is the folders structure
 
