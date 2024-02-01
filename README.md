@@ -176,10 +176,73 @@ app.Run();
 
 In this section we refactor the **HttpRequestPipelineExtensions.cs** file to extract from it the EndPoints code
 
-![image](https://github.com/luiscoco/MinimalAPI_Refactoring_Extensions_EndPoints/assets/32194879/21465b0a-6088-4bb0-866b-6ced763b0751)
-
 We create a new folder called **Endpoints** and inside we create a new file **WeatherforecastEndpoints.cs**
 
+![image](https://github.com/luiscoco/MinimalAPI_Refactoring_Extensions_EndPoints/assets/32194879/21465b0a-6088-4bb0-866b-6ced763b0751)
+
+This is the new code
+
+**HttpRequestPipelineExtensions.cs** 
+
+```csharp
+using MinimalAPISample3.Endpoints;
+
+namespace MinimalAPISample2.Extensions;
+
+public static class HttpRequestPipelineExtensions
+{
+
+    public static WebApplication ConfigureHttpRequestPipeline(this WebApplication app)
+    {
+        if (app.Environment.IsDevelopment())
+        {
+            app.UseSwagger();
+            app.UseSwaggerUI();
+        }
+
+        app.UseHttpsRedirection();
+
+        app.MapWeatherforecastEndpoints();
+
+        return app;
+    }
+}
+```
+
+**Weatherforecastendpoints**
+
+```csharp
+namespace MinimalAPISample3.Endpoints;
+
+internal record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
+{
+    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+}
+
+public static class WeatherforecastEndpoints
+{
+    public static void MapWeatherforecastEndpoints(this IEndpointRouteBuilder routes)
+    {
+        var summaries = new[] {"Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching" };
+
+        _ = routes
+             .MapGet("/weatherforecast", () =>
+             {
+                 var forecast = Enumerable.Range(1, 5).Select(index =>
+                     new WeatherForecast
+                     (
+                         DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
+                         Random.Shared.Next(-20, 55),
+                         summaries[Random.Shared.Next(summaries.Length)]
+                     ))
+                     .ToArray();
+                 return forecast;
+             })
+             .WithName("GetWeatherForecast")
+             .WithOpenApi();
+    }
+}
+```
 
 
 ## 4. 
