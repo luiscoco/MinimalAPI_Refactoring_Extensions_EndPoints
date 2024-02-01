@@ -6,7 +6,7 @@ The source code for this sample is in this github repo: https://github.com/luisc
 
 We create a new .NET8 WebAPI with Visual Studio 2022 Community Edition and **unselect the controllers option**
 
-![image](https://github.com/luiscoco/MinimalAPI_Refactoring_Extensions_EndPoints/assets/32194879/70188fc8-3ef5-49a3-b645-3572d778f53f)
+![image](https://github.com/luiscoco/MinimalAPI_Refactoring_Extensions_EndPoints/assets/32194879/35223906-cdb9-445f-80e9-635be9ce8481)
 
 We select the project template
 
