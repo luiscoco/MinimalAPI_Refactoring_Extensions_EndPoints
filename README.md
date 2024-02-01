@@ -87,7 +87,7 @@ public static class ApplicationServicesExtensions
 }
 ```
 
-We modify the middleware (**program.cs**) for invoking the **ApplicationServicesExtensions.cs** file
+We modify the middleware (**program.cs**) for invoking the **ConfigureApplicationServices** function
 
 ```csharp
 using MinimalAPISample2.Extensions;
@@ -100,11 +100,70 @@ var app = builder.Build();
 ...
 ```
 
-
-
 ### 2.2. HttpRequestPipelineExtensions.cs 
 
+We create a new file **HttpRequestPipelineExtensions.cs** for configuring the HTTP request pipeline
 
+**HttpRequestPipelineExtensions.cs** 
+
+```csharp
+namespace MinimalAPISample2.Extensions;
+
+internal record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
+{
+    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+}
+
+public static class HttpRequestPipelineExtensions
+{
+
+    public static WebApplication ConfigureHttpRequestPipeline(this WebApplication app)
+    {
+        if (app.Environment.IsDevelopment())
+        {
+            app.UseSwagger();
+            app.UseSwaggerUI();
+        }
+
+        app.UseHttpsRedirection();
+
+        var summaries = new[]
+        {
+    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+};
+
+        app.MapGet("/weatherforecast", () =>
+        {
+            var forecast = Enumerable.Range(1, 5).Select(index =>
+                new WeatherForecast
+                (
+                    DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
+                    Random.Shared.Next(-20, 55),
+                    summaries[Random.Shared.Next(summaries.Length)]
+                ))
+                .ToArray();
+            return forecast;
+        })
+        .WithName("GetWeatherForecast")
+        .WithOpenApi();
+
+        return app;
+    }
+}
+```
+
+We modify the middleware (**program.cs**) for invoking the **ConfigureApplicationServices** and **ConfigureHttpRequestPipeline** functions
+
+```csharp
+using MinimalAPISample2.Extensions;
+
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.ConfigureApplicationServices();
+
+var app = builder.Build();
+app.ConfigureHttpRequestPipeline();
+app.Run();
+```
 
 ## 3. Create the EndPoints
 
