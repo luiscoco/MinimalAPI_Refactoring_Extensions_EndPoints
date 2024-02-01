@@ -66,6 +66,8 @@ We create a new folder **Extensions**
 
 ![image](https://github.com/luiscoco/MinimalAPI_Refactoring_Extensions_EndPoints/assets/32194879/6d892790-39c1-4c5c-8f0e-d64d4df8d2eb)
 
+And inside the **Extensions** folder we create two new files: **ApplicationServicesExtensions.cs** and **HttpRequestPipelineExtensions.cs**
+
 ### 2.1. ApplicationServicesExtensions.cs
 
 We create a new file **ApplicationServicesExtensions.cs** for including the services adding to the application container
