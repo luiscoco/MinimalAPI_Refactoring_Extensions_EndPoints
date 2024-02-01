@@ -172,7 +172,7 @@ app.ConfigureHttpRequestPipeline();
 app.Run();
 ```
 
-## 3. Create the EndPoints files
+## 3. Create the EndPoints files (See Sample3)
 
 In this section we refactor the **HttpRequestPipelineExtensions.cs** file to extract from it the EndPoints code
 
