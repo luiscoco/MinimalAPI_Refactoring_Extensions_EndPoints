@@ -209,7 +209,7 @@ public static class HttpRequestPipelineExtensions
 }
 ```
 
-**Weatherforecastendpoints**
+**Weatherforecastendpoints.cs**
 
 ```csharp
 namespace MinimalAPISample3.Endpoints;
