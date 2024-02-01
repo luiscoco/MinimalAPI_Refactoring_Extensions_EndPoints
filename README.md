@@ -18,7 +18,6 @@ This is the middleware (**program.cs**) provided by the Visual Studio template
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -64,7 +63,48 @@ internal record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary
 
 ## 2. Create the Extensions 
 
-### 2.1. ApplicationServices Extensions
+### 2.1. ApplicationServicesExtensions.cs
+
+We create a new file **ApplicationServicesExtensions.cs** for including the services adding to the application container
+
+**ApplicationServicesExtensions.cs**
+
+```csharp
+using System.Text.Json;
+
+namespace MinimalAPISample2.Extensions;
+
+public static class ApplicationServicesExtensions
+{
+    public static IServiceCollection ConfigureApplicationServices(this IServiceCollection services)
+    {
+        
+        _ = services.AddEndpointsApiExplorer();
+        _ = services.AddSwaggerGen();
+
+        return services;
+    }
+
+}
+```
+
+We modify the middleware (**program.cs**) for invoking the **ApplicationServicesExtensions.cs** file
+
+```csharp
+using MinimalAPISample2.Extensions;
+
+var builder = WebApplication.CreateBuilder(args);
+
+//builder.Services.AddEndpointsApiExplorer();
+//builder.Services.AddSwaggerGen();
+
+builder.Services.ConfigureApplicationServices();
+
+var app = builder.Build();
+...
+```
+
+
 
 ### 2.2. HttpRequestPipeline Extensions
 
