@@ -257,8 +257,3 @@ public static class WeatherforecastEndpoints
     }
 }
 ```
-
-
-## 4. 
-
-
