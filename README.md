@@ -1,4 +1,4 @@
-# How to refactor a .NET8 MinimalAPI with Extensions and EndPoints folders
+# How to refactor a .NET8 MinimalAPI for adding Extensions and EndPoints folders
 
 ## 1. Create a .NET8 MinimalAPI (See Sample1, Default Visual Studio template code)
 
