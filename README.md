@@ -6,6 +6,19 @@ The source code for this sample is in this github repo: https://github.com/luisc
 
 We create a new .NET8 WebAPI with Visual Studio 2022 Community Edition and **unselect the controllers option**
 
+![image](https://github.com/luiscoco/MinimalAPI_Refactoring_Extensions_EndPoints/assets/32194879/70188fc8-3ef5-49a3-b645-3572d778f53f)
+
+We select the project template
+
+![image](https://github.com/luiscoco/MinimalAPI_Refactoring_Extensions_EndPoints/assets/32194879/3b48ee7d-f911-43b6-8b85-3a2a84b228f4)
+
+We input the project name and location
+
+![image](https://github.com/luiscoco/MinimalAPI_Refactoring_Extensions_EndPoints/assets/32194879/00dade7c-3c3f-4732-a6ae-53768558e842)
+
+We select the project main features. **VERY IMPORTANT**: Do not forget to **uncheck the create controllers** option
+
+![image](https://github.com/luiscoco/MinimalAPI_Refactoring_Extensions_EndPoints/assets/32194879/88a54c4c-395c-49d2-8b7c-3408a64f46ed)
 
 
 This is the folders structure
