@@ -10,7 +10,7 @@ We create a new .NET8 WebAPI with Visual Studio 2022 Community Edition and **uns
 
 We select the project template
 
-![image](https://github.com/luiscoco/MinimalAPI_Refactoring_Extensions_EndPoints/assets/32194879/3b48ee7d-f911-43b6-8b85-3a2a84b228f4)
+![image](https://github.com/luiscoco/MinimalAPI_Refactoring_Extensions_EndPoints/assets/32194879/0bd04559-3328-440f-b74e-5df662abbeff)
 
 We input the project name and location
 
