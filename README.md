@@ -60,8 +60,7 @@ internal record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary
 }
 ```
 
-
-## 2. Create the Extensions 
+## 2. Create the Extensions files (See Sample 2)
 
 ### 2.1. ApplicationServicesExtensions.cs
 
