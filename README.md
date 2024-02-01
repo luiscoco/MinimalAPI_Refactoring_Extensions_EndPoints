@@ -5,10 +5,10 @@
 
 ## 2. Create the Extensions 
 
-### 2.1. Application Services Extensions
+### 2.1. ApplicationServices Extensions
 
 ### 2.2. HttpRequestPipeline Extensions
 
+## 3. Create the EndPoints
 
 
-## 
