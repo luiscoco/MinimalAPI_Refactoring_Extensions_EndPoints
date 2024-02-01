@@ -172,7 +172,14 @@ app.ConfigureHttpRequestPipeline();
 app.Run();
 ```
 
-## 3. Create the EndPoints
+## 3. Create the EndPoints files
+
+In this section we refactor the **HttpRequestPipelineExtensions.cs** file to extract from it the EndPoints code
+
+![image](https://github.com/luiscoco/MinimalAPI_Refactoring_Extensions_EndPoints/assets/32194879/21465b0a-6088-4bb0-866b-6ced763b0751)
+
+We create a new folder called **Endpoints** and inside we create a new file **WeatherforecastEndpoints.cs**
+
 
 
 ## 4. 
