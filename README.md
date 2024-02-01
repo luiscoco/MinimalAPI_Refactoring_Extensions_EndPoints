@@ -95,9 +95,6 @@ using MinimalAPISample2.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//builder.Services.AddEndpointsApiExplorer();
-//builder.Services.AddSwaggerGen();
-
 builder.Services.ConfigureApplicationServices();
 
 var app = builder.Build();
@@ -106,7 +103,9 @@ var app = builder.Build();
 
 
 
-### 2.2. HttpRequestPipeline Extensions
+### 2.2. HttpRequestPipelineExtensions.cs 
+
+
 
 ## 3. Create the EndPoints
 
